@@ -888,12 +888,12 @@ section:nth-of-type(2n + 3) {
 }
 
 .news__image {
-  background-image: url("../../img/compressed/grapes-middle.png");
+  background-image: url("../../img/compressed/body-image-01.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  width: 235px;
-  height: 157px;
+  width: 190px;
+  height: 190px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -914,7 +914,7 @@ section:nth-of-type(2n + 3) {
 }
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
   .news__image {
-    background-image: url("../img/compressed/grapes-middle@2x.png");
+    background-image: url("../img/compressed/body-image-01@2x.png");
   }
 }
 
@@ -1005,12 +1005,12 @@ section:nth-of-type(2n + 3) {
 }
 
 .faq__image {
-  background-image: url("../../img/compressed/breakfast-middle.png");
+  background-image: url("../../img/compressed/body-image-02.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  width: 349px;
-  height: 197px;
+  width: 220px;
+  height: 193px;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1031,7 +1031,7 @@ section:nth-of-type(2n + 3) {
 }
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
   .faq__image {
-    background-image: url("../img/compressed/breakfast-middle@2x.png");
+    background-image: url("../img/compressed/body-image-02@2x.png");
   }
 }
 
@@ -1106,12 +1106,12 @@ section:nth-of-type(2n + 3) {
   }
 }
 .access__image {
-  background-image: url("../../img/compressed/Brussels_sprouts-middle.png");
+  background-image: url("../../img/compressed/body-image-03.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  width: 264px;
-  height: 150px;
+  width: 268px;
+  height: 133px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1132,7 +1132,7 @@ section:nth-of-type(2n + 3) {
 }
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
   .access__image {
-    background-image: url("../img/compressed/Brussels_sprouts-middle@2x.png");
+    background-image: url("../img/compressed/body-image-03@2x.png");
   }
 }
 
