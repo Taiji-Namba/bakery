@@ -1,6 +1,10 @@
 @use "../mixin";
 @use "../setting";
 
+.footer {
+  background-color: setting.$bg-color-white;
+}
+
 .footer__inner {
   width: 100%;
   max-width: mixin.$layout-width-inner;

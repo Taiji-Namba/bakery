@@ -40,6 +40,10 @@ textarea {
   display: block;
 }
 
+.footer {
+  background-color: #faf7f0;
+}
+
 .footer__inner {
   width: 100%;
   max-width: 1280px;
@@ -127,7 +131,7 @@ textarea {
 }
 
 .footer-nav__anchor {
-  color: #4e301b;
+  color: #3d1c00;
 }
 
 .footer__image1 {
@@ -202,7 +206,7 @@ textarea {
 .copyright__text {
   text-align: center;
   font-size: 12px;
-  color: #4e301b;
+  color: #3d1c00;
 }
 
 .gnav {
@@ -228,7 +232,7 @@ textarea {
   z-index: 999;
   top: 0;
   left: 0;
-  background-color: #fdf9ef;
+  background-color: #f1e8d6;
 }
 
 .left-gnav {
@@ -294,7 +298,7 @@ textarea {
 
 .left-gnav__anchor,
 .right-gnav__anchor {
-  color: #4e301b;
+  color: #3d1c00;
 }
 
 .gnav__logo-text {
@@ -315,7 +319,7 @@ textarea {
 }
 
 header {
-  background-color: #fdf9ef;
+  background-color: #f1e8d6;
 }
 
 .header__inner {
@@ -341,5 +345,5 @@ header {
   margin: -72px auto -29px;
   position: relative;
   border-radius: 50%;
-  background: #fdf9ef;
+  background: #f1e8d6;
 }/*# sourceMappingURL=style.css.map */
