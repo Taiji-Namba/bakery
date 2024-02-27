@@ -1,0 +1,23 @@
+{
+  "name": "coding-intermediate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taiji-Namba/coding-intermediate-level.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taiji-Namba/coding-intermediate-level/issues"
+  },
+  "homepage": "https://github.com/Taiji-Namba/coding-intermediate-level#readme",
+  "devDependencies": {
+    "sass": "^1.69.6"
+  }
+}

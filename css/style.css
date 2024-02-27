@@ -1,0 +1,345 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #4e301b;
+  width: 100%;
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-inline: 0;
+  margin-block: 0;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+@media screen and (max-width: 767px) {
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+textarea {
+  display: block;
+}
+
+.footer__inner {
+  width: 100%;
+  max-width: 1280px;
+  padding-top: 24px;
+  padding-bottom: 97px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  position: relative;
+  z-index: 0;
+}
+@media screen and (max-width: 1279px) {
+  .footer__inner {
+    padding-inline: 1.25rem;
+    padding-bottom: 144px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__inner {
+    padding-inline: 1rem;
+    padding-bottom: 124px;
+  }
+}
+
+.footer__contents {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__logo-mark {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+}
+
+.footer__logo-text {
+  margin-bottom: 2.0625rem;
+}
+
+.footer__logo-text-image {
+  display: block;
+}
+
+.footer-nav__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .footer-nav__list {
+    width: 80%;
+    max-width: 20rem;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    gap: 1rem;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
+
+.footer-nav__item {
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  .footer-nav__item {
+    font-size: 0.875rem;
+  }
+}
+
+.footer-nav__anchor {
+  color: #4e301b;
+}
+
+.footer__image1 {
+  background-image: url("../../img/compressed/strawberry-middle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 297px;
+  height: 167px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+@media screen and (max-width: 1279px) {
+  .footer__image1 {
+    width: 227px;
+    height: 128px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__image1 {
+    width: 190px;
+    height: 107px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  /*2倍の画像を指定*/
+  .footer__image1 {
+    background-image: url("../img/compressed/strawberry-middle@2x.jpg");
+  }
+}
+.footer__image2 {
+  background-image: url("../../img/compressed/livestock-middle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 237px;
+  height: 162px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+}
+@media screen and (max-width: 1279px) {
+  .footer__image2 {
+    width: 181px;
+    height: 124px;
+    right: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__image2 {
+    width: 151px;
+    height: 104px;
+    right: 16px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  /*2倍の画像を指定*/
+  .footer__image2 {
+    background-image: url("../img/compressed/livestock-middle@2x.jpg");
+  }
+}
+.copyright {
+  background-color: #d9d9d9;
+  padding-block: 22px;
+}
+
+.copyright__text {
+  text-align: center;
+  font-size: 12px;
+  color: #4e301b;
+}
+
+.gnav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 100px;
+}
+
+.gnav.nav-fixed {
+  position: fixed; /*fixedを設定して固定*/
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #fdf9ef;
+}
+
+.left-gnav {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 150px);
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+@media screen and (max-width: 1279px) {
+  .left-gnav {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .left-gnav {
+    display: none;
+  }
+}
+
+.right-gnav {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 150px);
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+@media screen and (max-width: 1279px) {
+  .right-gnav {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .right-gnav {
+    display: none;
+  }
+}
+
+.gnav__item {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.left-gnav__item:first-of-type {
+  padding-right: 33px;
+}
+.left-gnav__item:nth-of-type(2) {
+  padding-right: 35px;
+}
+.left-gnav__item:last-of-type {
+  padding-right: 39px;
+}
+
+.right-gnav__item:first-of-type {
+  padding-left: 39px;
+}
+.right-gnav__item:nth-of-type(2) {
+  padding-left: 38px;
+}
+.right-gnav__item:last-of-type {
+  padding-left: 34px;
+}
+
+.left-gnav__anchor,
+.right-gnav__anchor {
+  color: #4e301b;
+}
+
+.gnav__logo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 767px) {
+  .gnav__logo-text {
+    position: static;
+    width: 100%;
+    -webkit-transform: none;
+            transform: none;
+    text-align: center;
+  }
+}
+
+header {
+  background-color: #fdf9ef;
+}
+
+.header__inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: 24px;
+}
+@media screen and (max-width: 1279px) {
+  .header__inner {
+    padding-inline: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__inner {
+    padding-inline: 16px;
+  }
+}
+
+.header__logo-mark {
+  width: 154px;
+  height: 154px;
+  margin: -72px auto -29px;
+  position: relative;
+  border-radius: 50%;
+  background: #fdf9ef;
+}/*# sourceMappingURL=style.css.map */

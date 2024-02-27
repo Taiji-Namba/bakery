@@ -1,0 +1,41 @@
+@use "../mixin";
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #4e301b;
+  width: 100%;
+  margin: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-inline: 0;
+  margin-block: 0;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+h4 {
+  font-size: 1.125rem;
+
+  @include mixin.mq(sp) {
+    font-size: 1rem;
+  }
+}
+
+textarea {
+  display: block; // textareaの下の謎の余白を消す
+}

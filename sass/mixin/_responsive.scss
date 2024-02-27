@@ -1,0 +1,31 @@
+// レイアウト幅
+$layout-width-inner: 1280px;
+
+// ブレークポイント
+$sp-breakpoint: 767px;
+$wide-breakpoint: 1400px;
+
+$breakpoints: (
+  // ディスプレイ幅
+  "sp": "screen and (max-width: #{$sp-breakpoint})",
+  "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+
+  // 解像度
+  "twice": "screen and (-webkit-min-device-pixel-ratio: 1.5)",
+  "three-times": "screen and (-webkit-min-device-pixel-ratio: 2.5)",
+
+  // 解像度andディスプレイ幅
+  "wide":
+    "screen and (min-width: #{$wide-breakpoint}) and (-webkit-max-device-pixel-ratio: 1.1)",
+
+  // その他: news-titleのうち最も長いものの幅
+  "the-most-longest-news-title": "screen and (max-width: 774px)"
+);
+
+// ブレイクポイントを定義した変数をmq()という@mixinで呼び出せるように
+@mixin mq($bp) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content;
+  }
+}

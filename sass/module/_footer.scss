@@ -1,0 +1,148 @@
+@use "../mixin";
+@use "../setting";
+
+.footer__inner {
+  width: 100%;
+  max-width: mixin.$layout-width-inner;
+  padding-top: 24px;
+  padding-bottom: 97px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  position: relative;
+  z-index: 0;
+
+  @include mixin.mq(tab) {
+    padding-inline: 1.25rem;
+    padding-bottom: 144px;
+  }
+
+  @include mixin.mq(sp) {
+    padding-inline: 1rem;
+    padding-bottom: 124px;
+  }
+}
+
+.footer__contents {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo-mark {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+}
+
+.footer__logo-text {
+  margin-bottom: 2.0625rem;
+}
+
+.footer__logo-text-image {
+  display: block;
+}
+
+.footer-nav__list {
+  display: flex;
+  gap: 1.5rem;
+  // justify-content: center;
+  margin-inline: auto;
+
+  @include mixin.mq(tab) {
+    // max-width: 90%;
+  }
+
+  @include mixin.mq(sp) {
+    width: 80%;
+    max-width: 20rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.footer-nav__item {
+  font-weight: bold;
+
+  @include mixin.mq(sp) {
+    font-size: 0.875rem;
+  }
+}
+
+.footer-nav__anchor {
+  color: setting.$txt-color;
+}
+
+.footer__image1 {
+  background-image: url("../../img/compressed/strawberry-middle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 297px;
+  height: 167px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  @include mixin.mq(tab) {
+    width: 227px;
+    height: 128px;
+  }
+
+  @include mixin.mq(sp) {
+    width: 190px;
+    height: 107px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  /*2倍の画像を指定*/
+  .footer__image1 {
+    background-image: url("../img/compressed/strawberry-middle@2x.jpg");
+  }
+}
+
+.footer__image2 {
+  background-image: url("../../img/compressed/livestock-middle.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 237px;
+  height: 162px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+
+  @include mixin.mq(tab) {
+    width: 181px;
+    height: 124px;
+    right: 16px;
+  }
+
+  @include mixin.mq(sp) {
+    width: 151px;
+    height: 104px;
+    right: 16px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  /*2倍の画像を指定*/
+  .footer__image2 {
+    background-image: url("../img/compressed/livestock-middle@2x.jpg");
+  }
+}
+
+.copyright {
+  background-color: #d9d9d9;
+  padding-block: 22px;
+}
+
+.copyright__text {
+  text-align: center;
+  font-size: 12px;
+  color: setting.$txt-color;
+}

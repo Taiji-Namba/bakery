@@ -1,0 +1,100 @@
+@use "../mixin";
+@use "../setting";
+
+.gnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100px;
+}
+
+.gnav.nav-fixed {
+  position: fixed; /*fixedを設定して固定*/
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: setting.$bg-color-beige;
+}
+
+.left-gnav {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 150px);
+  transform: translate(-100%, -50%);
+
+  @include mixin.mq(tab) {
+    display: none;
+  }
+
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+
+.right-gnav {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 150px);
+  transform: translate(0%, -50%);
+
+  @include mixin.mq(tab) {
+    display: none;
+  }
+
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+
+.gnav__item {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.left-gnav__item {
+  &:first-of-type {
+    padding-right: 33px;
+  }
+
+  &:nth-of-type(2) {
+    padding-right: 35px;
+  }
+  &:last-of-type {
+    padding-right: 39px;
+  }
+}
+
+.right-gnav__item {
+  &:first-of-type {
+    padding-left: 39px;
+  }
+
+  &:nth-of-type(2) {
+    padding-left: 38px;
+  }
+  &:last-of-type {
+    padding-left: 34px;
+  }
+}
+
+.left-gnav__anchor,
+.right-gnav__anchor {
+  color: setting.$txt-color;
+}
+
+.gnav__logo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include mixin.mq(sp) {
+    position: static;
+    // margin: -29px 0 0;
+    width: 100%;
+    transform: none;
+    text-align: center;
+  }
+}

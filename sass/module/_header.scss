@@ -1,0 +1,29 @@
+@use "../mixin";
+@use "../setting";
+
+header {
+  background-color: setting.$bg-color-beige;
+}
+
+.header__inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: 24px;
+
+  @include mixin.mq(tab) {
+    padding-inline: 20px;
+  }
+  @include mixin.mq(sp) {
+    padding-inline: 16px;
+  }
+}
+
+.header__logo-mark {
+  width: 154px;
+  height: 154px;
+  margin: -72px auto -29px;
+  position: relative;
+  border-radius: 50%;
+  background: setting.$bg-color-beige;
+}
