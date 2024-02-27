@@ -594,13 +594,13 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   z-index: 3;
 
   @include mixin.mq(tab) {
-    width: 180px;
-    height: 120px;
+    width: 146px;
+    height: 146px;
   }
 
   @include mixin.mq(sp) {
-    width: 150px;
-    height: 100px;
+    width: 121px;
+    height: 121px;
   }
 
   @include mixin.mq(twice) {
@@ -710,13 +710,13 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   z-index: 3;
 
   @include mixin.mq(tab) {
-    width: 267px;
-    height: 151px;
+    width: 168px;
+    height: 148px;
   }
 
   @include mixin.mq(sp) {
-    width: 223px;
-    height: 126px;
+    width: 141px;
+    height: 123px;
   }
 
   @include mixin.mq(twice) {
@@ -816,13 +816,13 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   z-index: 3;
 
   @include mixin.mq(tab) {
-    width: 202px;
-    height: 115px;
+    width: 205px;
+    height: 102px;
   }
 
   @include mixin.mq(sp) {
-    width: 169px;
-    height: 95.8px;
+    width: 172px;
+    height: 85px;
   }
 
   @include mixin.mq(twice) {
