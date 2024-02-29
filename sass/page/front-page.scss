@@ -65,10 +65,6 @@
     background-image: url("../img/compressed/fv@2x.jpg");
   }
 
-  @include mixin.mq(three-times) {
-    background-image: url("../img/compressed/fv@3x.jpg");
-  }
-
   @include mixin.mq(wide) {
     background-image: url("../img/compressed/fv@2x.jpg");
   }
@@ -302,7 +298,7 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
 }
 
 .about__image1 {
-  background-image: url("../../img/compressed/about-01.png");
+  background-image: url("../../img/compressed/about-01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -327,12 +323,12 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   }
 
   @include mixin.mq(twice) {
-    background-image: url("../img/compressed/about-01@2x.png");
+    background-image: url("../img/compressed/about-01@2x.jpg");
   }
 }
 
 .about__image2 {
-  background-image: url("../../img/compressed/about-02.png");
+  background-image: url("../../img/compressed/about-02.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -354,12 +350,12 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   }
 
   @include mixin.mq(twice) {
-    background-image: url("../img/compressed/about-02@2x.png");
+    background-image: url("../img/compressed/about-02@2x.jpg");
   }
 }
 
 .about__image2--sp {
-  background-image: url("../../img/compressed/about-02.png");
+  background-image: url("../../img/compressed/about-02.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -376,7 +372,7 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   }
 
   @include mixin.mq(twice) {
-    background-image: url("../img/compressed/about-02@2x.png");
+    background-image: url("../img/compressed/about-02@2x.jpg");
   }
 }
 
