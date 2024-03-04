@@ -394,7 +394,7 @@ header {
 @media screen and (max-width: 767px) {
   .fv__heading {
     writing-mode: horizontal-tb;
-    top: 75%;
+    top: 68%;
     left: 33px;
     transform: translateY(-50%);
   }
