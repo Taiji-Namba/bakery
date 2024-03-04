@@ -305,7 +305,7 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   border-radius: 150px;
   width: $width-of-about__image1;
   height: 524px;
-  margin-bottom: 38px;
+  margin-bottom: 80px;
 
   @include mixin.mq(tab) {
     height: 400px;

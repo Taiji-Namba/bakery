@@ -606,7 +606,7 @@ section:nth-of-type(2n + 3) {
   border-radius: 150px;
   width: clamp(30rem, 1.313rem + 59.77vw, 49.125rem);
   height: 524px;
-  margin-bottom: 38px;
+  margin-bottom: 80px;
 }
 @media screen and (max-width: 1279px) {
   .about__image1 {
