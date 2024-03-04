@@ -92,11 +92,11 @@
   padding: 0.3em 0.218em 0em;
   margin: 0 0.328em;
   display: inline-block;
-  height: 431.594px;
+  height: 486px;
   white-space: nowrap;
 
   &:last-of-type {
-    height: 143.594px;
+    height: 199px;
   }
 
   @include mixin.mq(sp) {
