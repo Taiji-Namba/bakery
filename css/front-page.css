@@ -721,7 +721,7 @@ section:nth-of-type(2n + 3) {
 }
 
 .about__text {
-  color: #8f6241;
+  color: rgba(61, 28, 0, 0.6274509804);
   background-color: rgba(250, 247, 240, 0.9);
   font-weight: bold;
   font-size: clamp(0.875rem, 0.688rem + 0.39vw, 1rem);
