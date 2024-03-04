@@ -440,6 +440,11 @@ $width-of-about__image2--sp: calc(#{$width-of-about__image1--sp} / 2);
   }
 }
 
+.about__spacing {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .pc-and-tab-break {
   @include mixin.mq(sp) {
     display: none;

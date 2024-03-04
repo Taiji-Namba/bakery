@@ -742,6 +742,11 @@ section:nth-of-type(2n + 3) {
   }
 }
 
+.about__spacing {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 767px) {
   .pc-and-tab-break {
     display: none;
