@@ -18,7 +18,7 @@ $(function () {
   $(window).on("load", function () {
     setTimeout(function () {
       show_logo();
-    }, 0.5);
+    }, 500);
     setTimeout(function () {
       hide_logo();
     }, 1500);
