@@ -1,14 +1,30 @@
 "use strict";
 $(function () {
   // ローディング
-  $(window).ready(function () {
-    $("#loading").addClass("slide-out");
-    $("#loading-box").delay(200).fadeIn("slow");
-    $("#loading-box").delay(700).fadeOut("slow");
-  });
+  // ローダー終了
+  function end_loader() {
+    $("#loading").fadeOut(800);
+  }
+  // ロゴ表示
+  function show_logo() {
+    $("#loading-box").fadeIn(400);
+  }
+  // ロゴ非表示
+  function hide_logo() {
+    $("#loading-box").fadeOut(400);
+  }
 
+  // タイマー処理
   $(window).on("load", function () {
-    $("#loading").addClass("loaded");
+    setTimeout(function () {
+      show_logo();
+    }, 0.5);
+    setTimeout(function () {
+      hide_logo();
+    }, 1500);
+    setTimeout(function () {
+      end_loader();
+    }, 2500);
   });
 
   // グローバルナビの追従
