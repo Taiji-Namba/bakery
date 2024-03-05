@@ -1,24 +1,52 @@
 "use strict";
 $(function () {
   // ローディング
-  // 1.2秒後にアニメーションを非表示にする (onloadのコードだけだと、iOSでページ更新時にloadされない。そのため、強制的にローディングアニメーションを終了させる必要がある。)
+
+  // ローディング背景フェードアウト
+  function end_loader() {
+    $("#loading").fadeOut(800);
+  }
+  // ロゴ表示
+  function show_logo() {
+    $("#loading-box").fadeIn(300);
+  }
+  // テキスト非表示
+  function hide_logo() {
+    $("#loading-box").fadeOut(300);
+  }
+
+  // 1.2秒後に強制的にローディングアニメーションを開始する (ローディングが上手くできなかったときの保険)
   var loadingTimeout = setTimeout(function () {
-    // ロゴを表示
-    $("#loading-box").delay(100).fadeIn(300);
-    //ロゴをフェードアウト
-    $("#loading-box").delay(800).fadeOut(300);
-    //背景をフェードアウト
-    $("#loading").delay(1900).fadeOut(800);
+    setTimeout(function () {
+      show_logo();
+    }, 100);
+
+    setTimeout(function () {
+      hide_logo();
+    }, 1000);
+
+    setTimeout(function () {
+      end_loader();
+    }, 1900);
   }, 1200);
 
+  // ローディングが完了したら
   $(window).on("load", function () {
-    // ロゴを表示
-    $("#loading-box").delay(100).fadeIn(300);
-    //ロゴをフェードアウト
-    $("#loading-box").delay(800).fadeOut(300);
-    //背景をフェードアウト
-    $("#loading").delay(1900).fadeOut(800);
-    // ページのローディングが完了したら、タイムアウトをクリアする
+    // iOSのGoogle Chromeでページ更新時にローディングアニメーションが始まらない問題を解決するため、手動でローディングを開始
+    $(window).trigger("load");
+    setTimeout(function () {
+      show_logo();
+    }, 100);
+
+    setTimeout(function () {
+      hide_logo();
+    }, 1000);
+
+    setTimeout(function () {
+      end_loader();
+    }, 1900);
+
+    // ページのローディングが完了したら、アニメーションの強制開始をクリアする
     clearTimeout(loadingTimeout);
   });
 
