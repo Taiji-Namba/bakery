@@ -1,30 +1,25 @@
 "use strict";
 $(function () {
   // ローディング
-  // ローダー終了
-  function end_loader() {
-    $("#loading").fadeOut(800);
-  }
-  // ロゴ表示
-  function show_logo() {
-    $("#loading-box").fadeIn(400);
-  }
-  // ロゴ非表示
-  function hide_logo() {
-    $("#loading-box").fadeOut(400);
-  }
+  // 1.2秒後にアニメーションを非表示にする (onloadのコードだけだと、iOSでページ更新時にloadされない。そのため、強制的にローディングアニメーションを終了させる必要がある。)
+  var loadingTimeout = setTimeout(function () {
+    // ロゴを表示
+    $("#loading-box").delay(100).fadeIn(300);
+    //ロゴをフェードアウト
+    $("#loading-box").delay(800).fadeOut(300);
+    //背景をフェードアウト
+    $("#loading").delay(1900).fadeOut(800);
+  }, 1200);
 
-  // タイマー処理
   $(window).on("load", function () {
-    setTimeout(function () {
-      show_logo();
-    }, 500);
-    setTimeout(function () {
-      hide_logo();
-    }, 1500);
-    setTimeout(function () {
-      end_loader();
-    }, 2500);
+    // ロゴを表示
+    $("#loading-box").delay(100).fadeIn(300);
+    //ロゴをフェードアウト
+    $("#loading-box").delay(800).fadeOut(300);
+    //背景をフェードアウト
+    $("#loading").delay(1900).fadeOut(800);
+    // ページのローディングが完了したら、タイムアウトをクリアする
+    clearTimeout(loadingTimeout);
   });
 
   // グローバルナビの追従
