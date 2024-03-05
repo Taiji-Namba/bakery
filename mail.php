@@ -30,7 +30,7 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 //---------------------------　必須設定　必ず設定してください　-----------------------
 
 //サイトのトップページのURL　※デフォルトでは送信完了後に「トップページへ戻る」ボタンが表示されますので
-$site_top = "https://the-connect-web.com/tateshina-goto-noen/";
+$site_top = "https://the-connect-web.com/bakery/";
 
 //管理者のメールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
 $to = "taiji-namba@the-connect-web.com ";
@@ -87,7 +87,7 @@ $requireCheck = 1;
 /* 必須入力項目(入力フォームで指定したname属性の値を指定してください。（上記で1を設定した場合のみ）
 値はシングルクォーテーションで囲み、複数の場合はカンマで区切ってください。フォーム側と順番を合わせると良いです。 
 配列の形「name="○○[]"」の場合には必ず後ろの[]を取ったものを指定して下さい。*/
-$require = array('お問い合わせ種別','お名前', 'ご住所', 'メールアドレス', '電話番号', 'お問い合わせ内容');
+$require = array('お問い合わせ種別', 'お名前', 'メールアドレス', '電話番号', 'お問い合わせ内容');
 
 
 //----------------------------------------------------------------------
@@ -632,7 +632,7 @@ function refererCheck($Referer_check,$Referer_check_domain){
 	}
 }
 function copyright(){
-	echo '<a style="display:block;text-align:center;margin:15px 0;font-size:11px;color:#aaa;text-decoration:none" href="http://www.php-factory.net/" target="_blank">- 蓼科ごとう農園 -</a>';
+	echo '<a style="display:block;text-align:center;margin:15px 0;font-size:11px;color:#aaa;text-decoration:none" href="http://www.php-factory.net/" target="_blank">- Bakery Cro -</a>';
 }
 //----------------------------------------------------------------------
 //  関数定義(END)
