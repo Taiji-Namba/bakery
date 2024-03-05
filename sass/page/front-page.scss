@@ -36,18 +36,6 @@
   margin-right: auto;
 }
 
-.slide-out {
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  transition: 3s ease-out;
-  transition-delay: 3s;
-}
-
-.loaded {
-  opacity: 0;
-  visibility: hidden;
-}
-
 .fv__inner {
   background-image: url("../img/compressed/fv.jpg");
   background-repeat: no-repeat;
