@@ -30,10 +30,8 @@ $(function () {
     }, 1900);
   }, 1200);
 
-  // ローディングが完了したら
-  $(window).on("load", function () {
-    // iOSのGoogle Chromeでページ更新時にローディングアニメーションが始まらない問題を解決するため、手動でローディングを開始
-    $(window).trigger("load");
+  // ページが読み込まれた時点でローディングアニメーションを開始
+  $(document).ready(function () {
     setTimeout(function () {
       show_logo();
     }, 100);
@@ -45,7 +43,10 @@ $(function () {
     setTimeout(function () {
       end_loader();
     }, 1900);
+  });
 
+  // ローディングが完了したら
+  $(window).on("load", function () {
     // ページのローディングが完了したら、アニメーションの強制開始をクリアする
     clearTimeout(loadingTimeout);
   });
