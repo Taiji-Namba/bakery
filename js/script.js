@@ -15,7 +15,7 @@ $(function () {
     $("#loading-box").fadeOut(300);
   }
 
-  // 1.2秒後に強制的にローディングアニメーションを開始する (ローディングが上手くできなかったときの保険)
+  // 1.5秒後に強制的にローディングアニメーションを開始する (ローディングが上手くできなかったときの保険)
   var loadingTimeout = setTimeout(function () {
     setTimeout(function () {
       show_logo();
@@ -28,7 +28,7 @@ $(function () {
     setTimeout(function () {
       end_loader();
     }, 1900);
-  }, 1200);
+  }, 1500);
 
   // ページが読み込まれた時点でローディングアニメーションを開始
   $(document).ready(function () {
@@ -144,8 +144,16 @@ $(function () {
     });
   };
 
-  window.addEventListener("load", function () {
-    initSwiper(); // ページ読み込み後に初期化
+  // window.addEventListener("load", function () {
+  //   initSwiper(); // ページ読み込み後に初期化
+  // });
+
+  $(document).ready(function () {
+    initSwiper(); // ページ読み込み時に初期化
+  });
+
+  $(window).on("load", function () {
+    initSwiper(); // ページ更新時にも初期化
   });
 
   //ハンバーガーメニューの実装
