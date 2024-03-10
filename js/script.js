@@ -144,8 +144,16 @@ $(function () {
     });
   };
 
-  window.addEventListener("load", function () {
-    initSwiper(); // ページ読み込み後に初期化
+  // window.addEventListener("load", function () {
+  //   initSwiper(); // ページ読み込み後に初期化
+  // });
+
+  $(document).ready(function () {
+    initSwiper(); // ページ読み込み時に初期化
+  });
+
+  $(window).on("load", function () {
+    initSwiper(); // ページ更新時にも初期化
   });
 
   //ハンバーガーメニューの実装
