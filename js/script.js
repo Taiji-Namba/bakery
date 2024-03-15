@@ -44,12 +44,7 @@ $(function () {
       end_loader();
     }, 1900);
   });
-
-  // ローディングが完了したら
-  $(window).on("load", function () {
-    // ページのローディングが完了したら、アニメーションの強制開始をクリアする
-    clearTimeout(loadingTimeout);
-  });
+  // ★バグ回避のために、「ページのローディングが完了したら、アニメーションの強制開始をクリアする処理」はSwiperの欄にまとめた。
 
   // グローバルナビの追従
   function FixedAnime() {
@@ -144,15 +139,14 @@ $(function () {
     });
   };
 
-  // window.addEventListener("load", function () {
-  //   initSwiper(); // ページ読み込み後に初期化
+  // $(document).ready(function () {
+  //   clearTimeout(loadingTimeout);
+  //   initSwiper(); // ページ読み込み時に初期化
   // });
 
-  $(document).ready(function () {
-    initSwiper(); // ページ読み込み時に初期化
-  });
-
   $(window).on("load", function () {
+    // ページのローディングが完了したら、アニメーションの強制開始をクリアする
+    clearTimeout(loadingTimeout);
     initSwiper(); // ページ更新時にも初期化
   });
 
