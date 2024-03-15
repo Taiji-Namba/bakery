@@ -139,15 +139,31 @@ $(function () {
     });
   };
 
-  // $(document).ready(function () {
-  //   clearTimeout(loadingTimeout);
-  //   initSwiper(); // ページ読み込み時に初期化
-  // });
+  // ローディングが開始された時点でタイマーをセットして1.5秒後にSwiperを初期化する
+  var loadingStart = false;
 
-  $(window).on("load", function () {
-    // ページのローディングが完了したら、アニメーションの強制開始をクリアする
-    clearTimeout(loadingTimeout);
-    initSwiper(); // ページ更新時にも初期化
+  // ローディングが開始された時にフラグをセット
+  function startLoading() {
+    loadingStart = true;
+  }
+
+  // ローディングが開始されたら1秒後にSwiperを初期化
+  function setSwiperInitTimer() {
+    setTimeout(function () {
+      if (loadingStart) {
+        initSwiper();
+      }
+    }, 1000);
+  }
+
+  // ローディングが開始された時にタイマーをセット
+  startLoading();
+  setSwiperInitTimer();
+
+  // ページ読み込み時
+  $(document).ready(function () {
+    clearTimeout(loadingTimeout); // アニメーションの強制開始をクリアする;
+    initSwiper(); // Swiper初期化
   });
 
   //ハンバーガーメニューの実装
