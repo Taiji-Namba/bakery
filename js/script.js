@@ -2,88 +2,19 @@
 $(function () {
   // ローディング
 
-  // ローディング背景フェードアウト
-  function end_loader() {
-    $("#loading").fadeOut(800);
-  }
-  // ロゴ表示
-  function show_logo() {
+  function runLoadingAnimation() {
+    // ロゴフェードイン
     $("#loading-box").fadeIn(300);
+
+    // ロゴフェードアウト
+    setTimeout(function () {
+      $("#loading-box").fadeOut(300);
+    }, 1300);
+
+    setTimeout(function () {
+      $("#loading").fadeOut(800);
+    }, 2000);
   }
-  // テキスト非表示
-  function hide_logo() {
-    $("#loading-box").fadeOut(300);
-  }
-
-  // 1.5秒後に強制的にローディングアニメーションを開始する (ローディングが上手くできなかったときの保険)
-  var loadingTimeout = setTimeout(function () {
-    setTimeout(function () {
-      show_logo();
-    }, 100);
-
-    setTimeout(function () {
-      hide_logo();
-    }, 1000);
-
-    setTimeout(function () {
-      end_loader();
-    }, 1900);
-  }, 1500);
-
-  // ページが読み込まれた時点でローディングアニメーションを開始
-  $(document).ready(function () {
-    setTimeout(function () {
-      show_logo();
-    }, 100);
-
-    setTimeout(function () {
-      hide_logo();
-    }, 1000);
-
-    setTimeout(function () {
-      end_loader();
-    }, 1900);
-  });
-  // ★バグ回避のために、「ページのローディングが完了したら、アニメーションの強制開始をクリアする処理」はSwiperの欄にまとめた。
-
-  // グローバルナビの追従
-  function FixedAnime() {
-    // グローバルナビまでの高さの取得
-    let gnavPos =
-      $(".fv").outerHeight() +
-      $(".header__logo-mark").outerHeight() / 2 +
-      parseInt($(".header__logo-mark").css("margin-bottom"), 10);
-
-    // ウィンドウの幅を取得
-    let windowWidth = $(window).width();
-
-    // ウィンドウの幅が1279px以下であれば追従しない
-    if (windowWidth > 1279) {
-      // グローバルナビの高さまでスクロールすると上部に固定する
-      let scroll = $(window).scrollTop();
-      if (scroll >= gnavPos) {
-        $(".gnav").addClass("nav-fixed");
-        $(".main__inner").css("padding-top", 120);
-      } else {
-        $(".gnav").removeClass("nav-fixed");
-        $(".main__inner").css("padding-top", 20);
-      }
-    } else {
-      // 幅が1279px以下の場合は追従を解除
-      $(".gnav").removeClass("nav-fixed");
-      $(".main__inner").css("padding-top", 20);
-    }
-  }
-
-  // ページが読み込まれたらすぐに動かす
-  $(window).scroll(function () {
-    FixedAnime(); /* スクロール途中からヘッダーを出現させる関数を呼ぶ*/
-  });
-
-  // ウィンドウのリサイズ時にも処理を実行
-  $(window).resize(function () {
-    FixedAnime();
-  });
 
   // Swiperの実装
   const slideLength = document.querySelectorAll(".swiper-slide").length;
@@ -91,6 +22,9 @@ $(function () {
   const initSwiper = () => {
     const swiper = new Swiper(".swiper", {
       loop: true,
+      loopedSlides: slideLength,
+      loopAdditionalSlides: 1,
+      slidesPerView: 1,
       autoplay: {
         delay: 0,
         disableOnInteraction: false, // ユーザーが操作してもスライドを継続
@@ -98,9 +32,6 @@ $(function () {
       },
       centeredSlides: true, //アクティブなスライドを中央に位置させる
       speed: 10000,
-      loopSlides: slideLength,
-      loopAdditionalSlides: slideLength,
-      slidesPerView: 1.25,
 
       // ユーザーがドラッグしたときのスピード調整
       freeMode: {
@@ -139,31 +70,49 @@ $(function () {
     });
   };
 
-  // ローディングが開始された時点でタイマーをセットして1.5秒後にSwiperを初期化する
-  var loadingStart = false;
-
-  // ローディングが開始された時にフラグをセット
-  function startLoading() {
-    loadingStart = true;
-  }
-
-  // ローディングが開始されたら1秒後にSwiperを初期化
-  function setSwiperInitTimer() {
-    setTimeout(function () {
-      if (loadingStart) {
-        initSwiper();
-      }
-    }, 1000);
-  }
-
-  // ローディングが開始された時にタイマーをセット
-  startLoading();
-  setSwiperInitTimer();
-
   // ページ読み込み時
   $(document).ready(function () {
-    clearTimeout(loadingTimeout); // アニメーションの強制開始をクリアする;
+    runLoadingAnimation();
     initSwiper(); // Swiper初期化
+  });
+
+  // グローバルナビの追従
+  function FixedAnime() {
+    // グローバルナビまでの高さの取得
+    let gnavPos =
+      $(".fv").outerHeight() +
+      $(".header__logo-mark").outerHeight() / 2 +
+      parseInt($(".header__logo-mark").css("margin-bottom"), 10);
+
+    // ウィンドウの幅を取得
+    let windowWidth = $(window).width();
+
+    // ウィンドウの幅が1279px以下であれば追従しない
+    if (windowWidth > 1279) {
+      // グローバルナビの高さまでスクロールすると上部に固定する
+      let scroll = $(window).scrollTop();
+      if (scroll >= gnavPos) {
+        $(".gnav").addClass("nav-fixed");
+        $(".main__inner").css("padding-top", 120);
+      } else {
+        $(".gnav").removeClass("nav-fixed");
+        $(".main__inner").css("padding-top", 20);
+      }
+    } else {
+      // 幅が1279px以下の場合は追従を解除
+      $(".gnav").removeClass("nav-fixed");
+      $(".main__inner").css("padding-top", 20);
+    }
+  }
+
+  // ページが読み込まれたらすぐに動かす
+  $(window).scroll(function () {
+    FixedAnime(); /* スクロール途中からヘッダーを出現させる関数を呼ぶ*/
+  });
+
+  // ウィンドウのリサイズ時にも処理を実行
+  $(window).resize(function () {
+    FixedAnime();
   });
 
   //ハンバーガーメニューの実装
